@@ -13,6 +13,9 @@ pipeline {
           }
        }
        stage('Publish') {
+         steps {
+            sh 'echo publish'
+         }
        }
     }
 }
