@@ -9,9 +9,8 @@ pipeline {
        }
        stage('Test') {
           steps {
-             sh 'sudo docker run -it localhost/webapp:latest -name=webappctr'
+             sh 'sudo docker run -d localhost/webapp:latest'
              sh 'echo Running Tests'
-             sh 'sudo docker stop webappctr' 
           }
        }
        stage('Publish') {
