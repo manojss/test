@@ -4,13 +4,13 @@ pipeline {
        stage('Build') {
           steps {
               sh 'echo $WORKSPACE'
-              sh 'chown -R ec2-user:ec2-user $WORKSPACE'
-              sh 'docker build -t webapp .'
+              sh 'sudo chown -R ec2-user:ec2-user $WORKSPACE'
+              sh 'sudo docker build -t webapp .'
           }
        }
        stage('Test') {
           steps {
-             sh 'docker run localhost/webapp:latest'
+             sh 'sudo docker run localhost/webapp:latest'
           }
        }
        stage('Publish') {
