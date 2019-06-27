@@ -4,12 +4,12 @@ pipeline {
        stage('Build') {
           steps {
               sh 'echo $WORKSPACE'
-              sh 'sudo docker build -t webapp .'
+              sh 'docker build -t webapp .'
           }
        }
        stage('Test') {
           steps {
-             sh 'sudo docker run localhost/webapp:latest'
+             sh 'docker run -it localhost/webapp:latest'
           }
        }
        stage('Publish') {
