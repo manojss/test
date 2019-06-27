@@ -3,7 +3,8 @@ pipeline {
     stages {
        stage('Build') {
           steps {
-              sh 'docker build -t webapp .
+              sh 'echo $WORKSPACE'
+              sh 'docker build -t webapp .'
           }
        }
        stage('Test') {
