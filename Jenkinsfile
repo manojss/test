@@ -12,7 +12,7 @@ pipeline {
              sh 'docker run localhost/webapp:latest'
           }
        }
-       stage('Publish')
+       stage('Publish') {
        }
     }
 }
