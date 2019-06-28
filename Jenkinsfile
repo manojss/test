@@ -16,8 +16,7 @@ pipeline {
        stage('Publish') {
          steps {
             sh 'echo publish'
-            sh 'docker push manojdocker2/webapp:${BUILD_NUMBER}'
-         }
-       }
+        }
+      }
     }
 }
