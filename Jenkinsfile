@@ -4,7 +4,7 @@ pipeline {
        stage('Build') {
           steps {
               sh 'echo $WORKSPACE'
-              sh 'sudo docker build -t webapp .'
+              sh 'sudo docker build -t manojdocker2/webapp:${BUILD_NUMBER} .'
           }
        }
        stage('Test') {
@@ -16,6 +16,7 @@ pipeline {
        stage('Publish') {
          steps {
             sh 'echo publish'
+            sh 'docker push manojdocker2/webapp:${BUILD_NUMBER}'
          }
        }
     }
