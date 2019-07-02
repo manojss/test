@@ -6,4 +6,4 @@ app = Flask(__name__)
 def helloIndex():
     return 'Flask web application'
 
-app.run(host='0.0.0.0', port= 8081)
+app.run(host='127.0.0.1', port=8081)
